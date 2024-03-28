@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- start Webots -->
+  <arg name="no_gui" default="false," doc="Start Webots with minimal GUI"/>
+  <include file="$(find webots_ros)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no_gui" value="$(arg no_gui)"/>
+    <arg name="world" value="$(find rosbot_webots)/worlds/ball_and_plate_kraj_proba_za_kraj1.wbt"/>
+  </include>
+
+  <arg name="auto_close" default="false" doc="Startup mode"/>
+
+  <env name="LD_LIBRARY_PATH" value="$(env LD_LIBRARY_PATH):$(env WEBOTS_HOME)/lib/controller"/>
+  <env name="PYTHONPATH" value="$(env PYTHONPATH):$(env WEBOTS_HOME)/lib/controller/python" if="$(eval '1' if env('ROS_DISTRO') == 'noetic' else '0')" />
+
+
+
+  <node name="camera_filter_node" pkg="rosbot_webots" type="camera_node.py" output="screen"/>
+     
+
+
+  <node name="putanja_node" pkg="rosbot_webots" type="putanja_node.py" output="screen"/>
+      
+ 
+  
+</launch>

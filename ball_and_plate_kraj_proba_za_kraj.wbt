@@ -1,0 +1,271 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Asphalt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/CorrugatedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/nvidia/jetbot/protos/JetBotRaspberryPiCamera.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/robotis/turtlebot/protos/TurtleBot3Burger.proto"
+
+WorldInfo {
+  CFM 1e-08
+  basicTimeStep 100
+  FPS 30
+  optimalThreadCount 4
+  physicsDisableTime 10
+}
+Viewpoint {
+  fieldOfView 0.785394
+  orientation -0.5326979508602008 -0.11839428365464895 0.8379831064808201 3.5098635381066643
+  position 1.2570613988890187 1.6693610066325602 3.129360717764204
+  exposure 2
+}
+RectangleArena {
+  translation 0 0.3 0
+  name "podloga"
+  floorSize 2 3
+  floorAppearance Parquetry {
+    type "dark strip"
+    colorOverride 0.2 0.2 0.5
+  }
+  wallThickness 0.04
+  wallAppearance BrushedAluminium {
+    colorOverride 0 0 0
+    IBLStrength 25
+  }
+}
+Solid {
+  translation 2.2873714914642525e-17 0.51 0.029803799999999957
+  rotation -0.1990658744931038 -0.03445068857436391 0.9793803794588943 5.611349896759345e-15
+  children [
+    DEF BoundingSolid Shape {
+      appearance PBRAppearance {
+        baseColor 0.9843 0.4902 0.0471
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+      castShadows FALSE
+    }
+  ]
+  boundingObject USE BoundingSolid
+  physics Physics {
+    density 92.593
+    mass 0.16
+  }
+}
+Solid {
+  translation -0.21 -0.66 1e-05
+  rotation 0 1 0 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Plane {
+        size 0.3 0.3
+      }
+    }
+  ]
+  name "cilj"
+}
+Solid {
+  translation 0.51 0.53 1e-05
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+        }
+      }
+      geometry Plane {
+        size 0.3 0.3
+      }
+    }
+  ]
+  name "start"
+}
+Solid {
+  translation -0.02 -0.04 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 0
+        }
+      }
+      geometry Box {
+        size 1 0.2 0.1
+      }
+    }
+  ]
+  name "prepreka1"
+}
+Solid {
+  translation 0.46 -0.44 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 1 0
+        }
+      }
+      geometry Box {
+        size 0.2 1 0.1
+      }
+    }
+  ]
+  name "prepreka2"
+}
+TurtleBot3Burger {
+  hidden position_0_0 9.597830717365278e-10
+  hidden position_0_1 2.6359596181853046e-10
+  hidden position_0_2 703.8606325252591
+  hidden position2_0_2 -112.22788068854696
+  hidden position3_0_2 -421.3001003497074
+  hidden linearVelocity_0 -5.871747393162649e-12 -7.675172929776556e-13 9.546307280958522e-13
+  hidden angularVelocity_0 1.8572939415419765e-11 -1.7119672555503297e-10 -1.5690893874790634e-12
+  hidden linearVelocity_2 -1.281424688889574e-11 5.243256853570242e-12 -1.9095054914481864e-11
+  hidden angularVelocity_2 1.79957422230998e-11 -1.7110977934388462e-10 -1.1491957534832688e-10
+  hidden linearVelocity_3 -1.561721373117114e-11 -6.133314320533049e-12 -1.92442528947441e-11
+  hidden angularVelocity_3 1.9055120126519424e-11 -1.7130589337205253e-10 1.2079763327676865e-10
+  hidden translation_5 3.146629355549858e-08 -0.08000000000000973 0.033000163646600654
+  hidden linearVelocity_5 -5.803829866244959e-12 -7.361405523614293e-13 -1.3239387636251827e-12
+  hidden angularVelocity_5 1.8425221997554214e-11 -1.8177851514977164e-10 -1.5778121232439642e-12
+  hidden translation_6 3.145888293182617e-08 0.0799999999999928 0.033000163646797205
+  hidden rotation_6 -0.7071047817074789 2.028845837258487e-13 -0.7071087806599625 3.1415880000004215
+  hidden linearVelocity_6 -6.028279899687793e-12 -7.382364732136703e-13 -4.3298271038665006e-12
+  hidden angularVelocity_6 1.867119943725312e-11 -1.8106818783115387e-10 -1.5772665601476704e-12
+  hidden translation_7 -0.08099998941653012 1.0029508681726371e-08 0.004000111810915675
+  hidden rotation_7 0.008883632347534117 -0.964047236401875 0.2655823922292685 5.368743266990372
+  hidden linearVelocity_7 7.564836595413437e-10 4.322003516575168e-10 1.1107360715290806e-11
+  hidden angularVelocity_7 -1.0792593919637311e-07 1.8919189464638464e-07 -0.00994348454422097
+  translation 0.46885143720013556 0.5418631362229217 -0.0009497391336591929
+  rotation 0.0021968136625580294 -0.00044687199431237684 0.9999974871544193 3.1401303454471257
+  controller "my_controller1"
+  extensionSlot [
+    Solid {
+      translation 0.075 0.03 -0.105
+      rotation 0 1 0 0
+      scale 0.672 0.672 0.672
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position -7.684262119051942e-10
+            axis 0 0 1
+            anchor 0 -0.15 0
+          }
+          device [
+            RotationalMotor {
+              name "right_gripper"
+            }
+          ]
+          endPoint Solid {
+            translation 0.08017270002577945 -0.09341889999601555 3.230537010340436e-06
+            rotation -9.441657681295593e-08 3.0244602787593117e-07 -0.9999999999999498 0.0016753071764798767
+            children [
+              DEF right_gripper_box Shape {
+                appearance Asphalt {
+                }
+                geometry Box {
+                  size 0.2 0.021 0.07
+                }
+              }
+            ]
+            name "desna_ruka"
+            boundingObject USE right_gripper_box
+            physics Physics {
+              density 100
+              mass 0.01
+            }
+            translationStep 0.15
+            rotationStep 0.261782
+          }
+        }
+        DEF mid_gripper_box Shape {
+          appearance CorrugatedMetal {
+            IBLStrength 0.5
+          }
+          geometry Box {
+            size 0.05 0.2 0.05
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 4.6736644799187205e-07
+            axis 0 0 1
+            anchor 0 0.15 0
+          }
+          device [
+            RotationalMotor {
+              name "left_gripper"
+            }
+          ]
+          endPoint Solid {
+            translation 0.06395949999330083 0.06541400000189304 -1.507910847436618e-05
+            rotation 3.431273166075825e-05 0.16380301844943104 -0.9864930663565212 0.0025473900056496696
+            children [
+              DEF left_gripper_box Shape {
+                appearance Asphalt {
+                }
+                geometry Box {
+                  size 0.22 0.021 0.07
+                }
+              }
+            ]
+            name "leva_ruka"
+            boundingObject USE left_gripper_box
+            physics Physics {
+              density 100
+              mass 0.01
+            }
+            translationStep 0.15
+            rotationStep 0.261782
+          }
+        }
+      ]
+      name "gripper_base"
+      boundingObject USE mid_gripper_box
+      physics Physics {
+      }
+    }
+    Solid {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 1
+              shininess 0
+            }
+          }
+          geometry Plane {
+            size 0.2 0.2
+          }
+        }
+      ]
+      name "gornja_ploca"
+    }
+  ]
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation 0 0 1.8
+  children [
+    JetBotRaspberryPiCamera {
+      rotation 0 1 0 1.5708
+      fieldOfView 1.7
+    }
+  ]
+  name "camera_robot"
+  controller "camera_controller1"
+}
